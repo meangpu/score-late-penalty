@@ -19,12 +19,22 @@ section {
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 3fr 2fr 3fr;
   gap: 20px;
   margin: auto;
   padding: 20px;
   border-radius: 1.2rem;
 }
+
+.penalty-conditions {
+  float: right;
+  text-align: right;
+}
+
+.penalty-conditions table {
+  margin-left: auto;
+}
+
 h2 {
   margin-bottom: 0;
 }
@@ -243,11 +253,29 @@ input[type="number"] {
     grid-template-columns: 1fr;
     padding: 10px;
   }
+
+  .penalty-conditions {
+    float: none;
+    text-align: left;
+  }
+
+  .penalty-conditions table {
+    margin-left: 0;
+  }
 }
 
 /* Styles for screens smaller than 480px (phones in portrait mode) */
 @media (max-width: 480px) {
   .container {
     padding: 5px;
+  }
+
+  .penalty-conditions {
+    float: none;
+    text-align: left;
+  }
+
+  .penalty-conditions table {
+    margin-left: 0;
   }
 }
