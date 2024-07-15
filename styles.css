@@ -1,6 +1,6 @@
 body {
   background-color: #1a1a1a;
-  color: #ffffff;
+  color: #ffffffd3;
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
@@ -66,4 +66,36 @@ nav a {
 .grid-item img:hover {
   transform: rotateY(10deg) rotateX(8deg) scale(1.02);
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+table {
+  border-collapse: collapse;
+  background-color: #222222;
+}
+
+th {
+  background-color: #4e4e4e;
+  color: #fff;
+}
+
+th,
+td {
+  border: 1px solid #555;
+  padding: 8px;
+}
+
+td + td {
+  border-left: none;
+}
+
+td:first-child {
+  border-top-left-radius: 10px;
+}
+
+td:last-child {
+  border-top-right-radius: 10px;
+}
+
+tr:last-child td {
+  border-bottom: none;
 }

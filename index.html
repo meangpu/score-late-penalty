@@ -8,42 +8,92 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
     />
-    <title>Late Submission Penalty Calculator</title>
+    <title>Late Submission Penalty calculator</title>
     <meta property="og:title" content="Dark Theme Website" />
     <meta property="og:description" content="dark theme" />
     <!-- <meta
-      property="og:image"
-      content="https://meangpu.github.io/assets/logo.05c59aac.webp"
+        property="og:image"
+        content="https://meangpu.github.io/assets/logo.05c59aac.webp"
     /> -->
 
     <script src="script.js"></script>
   </head>
+
   <body>
     <header>
-      <h1>Late Submission Penalty Calculator</h1>
+      <h1>Late Submission Penalty calculator</h1>
     </header>
 
-    <h1>Penalty Conditions:</h1>
-        <ul>
+    <section>
+      <h1>Penalty Conditions:</h1>
+      <ul>
         <li>Within 30 minutes: 0.01 points per minute</li>
         <li>Within 1 hour: 0.02 points per minute</li>
         <li>Within 2 hours: 0.04 points per minute</li>
         <li>More than 2 hours: 0.07 points per minute</li>
-        </ul>
-
-    <section class="image-grid">
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400x200" alt="Sample Image 1" />
-        <p>This is a cool image!</p>
-      </div>
-
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400x200" alt="Sample Image 2" />
-        <p>Another awesome image!</p>
-      </div>
+      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th>Minutes Late</th>
+            <th>Penalty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0</td>
+            <td>0.00</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>0.15</td>
+          </tr>
+          <tr>
+            <td>30</td>
+            <td>0.30</td>
+          </tr>
+          <tr>
+            <td>45</td>
+            <td>0.60</td>
+          </tr>
+          <tr>
+            <td>60</td>
+            <td>0.90</td>
+          </tr>
+          <tr>
+            <td>75</td>
+            <td>1.50</td>
+          </tr>
+          <tr>
+            <td>90</td>
+            <td>2.10</td>
+          </tr>
+          <tr>
+            <td>105</td>
+            <td>2.70</td>
+          </tr>
+          <tr>
+            <td>120</td>
+            <td>3.30</td>
+          </tr>
+          <tr>
+            <td>135</td>
+            <td>3.85</td>
+          </tr>
+          <tr>
+            <td>150</td>
+            <td>4.30</td>
+          </tr>
+          <tr>
+            <td>165</td>
+            <td>4.65</td>
+          </tr>
+          <tr>
+            <td>180</td>
+            <td>7.50</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
-
-    <footer>
-      <p>&copy; 2024 meangpu Dark Theme Web</p>
-    </footer>
+  </body>
 </html>
