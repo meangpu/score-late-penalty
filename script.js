@@ -1,8 +1,12 @@
 const formData = document.getElementById("minuteLateForm");
+const minuteLateInput = document.getElementById("minuteLateInput");
 const scoreLateResult = document.getElementById("lateResult");
 
 formData.addEventListener("submit", function (event) {
   event.preventDefault();
+  let minuteLate = minuteLateInput.value;
+  let penaltyScore = smooth_penalty(minuteLate).toFixed(2);
+  scoreLateResult.innerHTML = penaltyScore;
 });
 
 function smooth_penalty(minutes_late) {
@@ -29,6 +33,3 @@ function smooth_penalty(minutes_late) {
 
   return penalty;
 }
-
-let penalty = smooth_penalty(90);
-console.log(penalty);
