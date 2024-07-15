@@ -1,19 +1,42 @@
-const formData = document.getElementById("minuteLateForm");
+const formMinute = document.getElementById("minuteLateForm");
 const minuteLateInput = document.getElementById("minuteLateInput");
 const buttonPenaltyCurrentTime = document.getElementById(
   "calculatePenaltyByCurrent"
 );
+
+const formTimeInput = document.getElementById("timeInputForm");
+const hourInput = document.getElementById("hourInput");
+const minuteInput = document.getElementById("minuteInput");
+
 const resultWord = document.getElementById("resultWord");
 const resultDescription = document.getElementById("resultDescription");
 const resultLineBreaker = document.getElementById("resultLineBreaker");
+const resultWellDone = document.getElementById("resultWellDone");
 const scoreLateResult = document.getElementById("lateResult");
 
-formData.addEventListener("submit", function (event) {
+formMinute.addEventListener("submit", function (event) {
   event.preventDefault();
   ClearAllResult();
   let minuteLate = minuteLateInput.value;
   let penaltyScore = GetPenaltyByMinute(minuteLate).toFixed(2);
 
+  DisplayScore(penaltyScore);
+});
+
+formTimeInput.addEventListener("submit", function (event) {
+  event.preventDefault();
+  ClearAllResult();
+
+  const hour = parseInt(hourInput.value);
+  const minute = parseInt(minuteInput.value);
+
+  const userInputTime = new Date();
+  userInputTime.setHours(hour, minute, 0, 0);
+
+  let minuteLate = calculateTimeDifferenceToNoon(userInputTime);
+  let penaltyScore = GetPenaltyByMinute(minuteLate).toFixed(2);
+
+  resultDescription.innerHTML = `you submit lab late by <span class="code_header">${minuteLate}</span> minutes`;
   DisplayScore(penaltyScore);
 });
 
@@ -30,8 +53,13 @@ buttonPenaltyCurrentTime.onclick = function () {
 function DisplayScore(penaltyScore) {
   resultLineBreaker.innerHTML =
     "========================================================";
-  resultWord.innerHTML = "your score will be reduce by";
-  scoreLateResult.innerHTML = `-${penaltyScore}`;
+
+  if (penaltyScore <= 0) {
+    resultWellDone.innerHTML = "✅ You have no penalty, well done!";
+  } else {
+    resultWord.innerHTML = "your score will be reduce by";
+    scoreLateResult.innerHTML = `-${penaltyScore}`;
+  }
 }
 
 function GetPenaltyByMinute(minutes_late) {
@@ -63,6 +91,10 @@ function calculateTimeDifferenceToNoon(currentTime) {
   const noonTime = new Date();
   noonTime.setHours(12, 0, 0, 0); // Set noon time (12:00:00)
 
+  if (currentTime < noonTime) {
+    return 0;
+  }
+
   const diffInMilliseconds = Math.abs(currentTime - noonTime);
   const diffInMinutes = Math.round(diffInMilliseconds / (1000 * 60));
 
@@ -74,4 +106,5 @@ function ClearAllResult() {
   resultDescription.innerHTML = "";
   scoreLateResult.innerHTML = "";
   resultLineBreaker.innerHTML = "";
+  resultWellDone.innerHTML = "";
 }

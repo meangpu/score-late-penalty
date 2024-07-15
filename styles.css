@@ -233,3 +233,7 @@ input[type="number"] {
   font-weight: bolder;
   margin-bottom: 0;
 }
+
+.resultWellDone {
+  color: rgb(73, 252, 97);
+}
