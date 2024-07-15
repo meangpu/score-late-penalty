@@ -52,9 +52,9 @@
       </section>
 
       <section>
-        <h2>Calculate Penalty</h2>
+        <h1>Calculate Penalty</h1>
         <form id="minuteLateForm" autocomplete="off">
-          <label for="minuteLateInput">minute late:</label>
+          <label for="minuteLateInput">>> calculate by minute late:</label>
           <div class="input-button-wrapper">
             <input
               type="number"
@@ -62,14 +62,58 @@
               name="minuteLateInput"
               placeholder="minutes late"
             />
-            <button type="submit" class="button-primary">
-              calculate penalty
-            </button>
+            <button type="submit" class="button-primary">submit</button>
           </div>
         </form>
 
         <br />
-        <div class="late-result" id="lateResult"></div>
+        <form id="timeInputForm">
+          <label for="timeInput"
+            >>> calculate by time you submit: (hour:minute)</label
+          >
+          <div class="input-button-wrapper">
+            <input
+              type="number"
+              id="hourInput"
+              name="hour"
+              placeholder="hour"
+              min="0"
+              max="23"
+              required
+            />
+
+            <input
+              type="number"
+              id="minuteInput"
+              name="minute"
+              placeholder="minute"
+              min="0"
+              max="59"
+              required
+            />
+            <button type="submit" class="button-primary">Submit</button>
+          </div>
+        </form>
+
+        <br />
+
+        <p class="max_width text-no-margin">
+          >> calculate by compare to current time:
+        </p>
+        <button class="button-primary" id="calculatePenaltyByCurrent">
+          submit
+        </button>
+
+        <br />
+        <br />
+        <br />
+
+        <div id="resultDiv" class="result">
+          <p id="resultLineBreaker"></p>
+          <p id="resultDescription"></p>
+          <p class="result" id="resultWord"></p>
+          <div class="late-result" id="lateResult"></div>
+        </div>
       </section>
 
       <section>
