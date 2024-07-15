@@ -237,3 +237,17 @@ input[type="number"] {
 .resultWellDone {
   color: rgb(73, 252, 97);
 }
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+}
+
+/* Styles for screens smaller than 480px (phones in portrait mode) */
+@media (max-width: 480px) {
+  .container {
+    padding: 5px;
+  }
+}
