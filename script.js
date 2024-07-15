@@ -51,8 +51,7 @@ buttonPenaltyCurrentTime.onclick = function () {
 };
 
 function DisplayScore(penaltyScore) {
-  resultLineBreaker.innerHTML =
-    "========================================================";
+  resultLineBreaker.innerHTML = "===========================";
 
   if (penaltyScore <= 0) {
     resultWellDone.innerHTML = "✅ You have no penalty, well done!";
