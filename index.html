@@ -8,6 +8,7 @@
       href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Poppins:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <title>Late Submission Penalty calculator</title>
     <meta property="og:title" content="Dark Theme Website" />
     <meta property="og:description" content="dark theme" />
@@ -15,8 +16,6 @@
         property="og:image"
         content="https://meangpu.github.io/assets/logo.05c59aac.webp"
     /> -->
-
-    <script src="script.js"></script>
   </head>
 
   <body>
@@ -50,14 +49,25 @@
           </tbody>
         </table>
         <br />
+      </section>
 
-        <h2>Calculate Penalty minute late</h2>
-        <form>
-          <input type="number" id="minuteLateInput" name="minuteLateInput" />
-          <button type="submit" class="button-primary">
-            calculate penalty
-          </button>
+      <section>
+        <h2>Calculate Penalty</h2>
+        <form id="minuteLateForm" autocomplete="off">
+          <label for="minuteLateInput">minute late:</label>
+          <div class="input-button-wrapper">
+            <input
+              type="number"
+              id="minuteLateInput"
+              name="minuteLateInput"
+              placeholder="minutes late"
+            />
+            <button type="submit" class="button-primary">submit</button>
+          </div>
         </form>
+
+        <br />
+        <div class="late-result" id="lateResult">result</div>
       </section>
 
       <section>
@@ -127,4 +137,6 @@
       </section>
     </div>
   </body>
+
+  <script src="script.js"></script>
 </html>
