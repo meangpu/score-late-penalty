@@ -56,7 +56,7 @@ function DisplayScore(penaltyScore) {
   if (penaltyScore <= 0) {
     resultWellDone.innerHTML = "✅ You have no penalty, well done!";
   } else {
-    resultWord.innerHTML = "your score will be reduce by";
+    resultWord.innerHTML = "Your score will be deducted by";
     scoreLateResult.innerHTML = `-${penaltyScore}`;
   }
 }
