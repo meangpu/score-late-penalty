@@ -8,6 +8,9 @@ const formTimeInput = document.getElementById("timeInputForm");
 const hourInput = document.getElementById("hourInput");
 const minuteInput = document.getElementById("minuteInput");
 
+const hourInputDeadline = document.getElementById("hourInputDeadline");
+const minuteInputDeadline = document.getElementById("minuteInputDeadline");
+
 const resultWord = document.getElementById("resultWord");
 const resultDescription = document.getElementById("resultDescription");
 const resultLineBreaker = document.getElementById("resultLineBreaker");
@@ -33,7 +36,7 @@ formTimeInput.addEventListener("submit", function (event) {
   const userInputTime = new Date();
   userInputTime.setHours(hour, minute, 0, 0);
 
-  let minuteLate = calculateTimeDifferenceToNoon(userInputTime);
+  let minuteLate = CalculateTimeDifferentToDeadline(userInputTime);
   let penaltyScore = GetPenaltyByMinute(minuteLate).toFixed(2);
 
   resultDescription.innerHTML = `you submit lab late by <span class="code_header">${minuteLate}</span> minutes`;
@@ -43,7 +46,7 @@ formTimeInput.addEventListener("submit", function (event) {
 buttonPenaltyCurrentTime.onclick = function () {
   ClearAllResult();
   let currentTime = new Date(); // Current time
-  let timeDifferenceToNoon = calculateTimeDifferenceToNoon(currentTime);
+  let timeDifferenceToNoon = CalculateTimeDifferentToDeadline(currentTime);
   let penaltyScore = GetPenaltyByMinute(timeDifferenceToNoon).toFixed(2);
 
   resultDescription.innerHTML = `you submit lab late by <span class="code_header">${timeDifferenceToNoon}</span> minutes`;
@@ -86,9 +89,9 @@ function GetPenaltyByMinute(minutes_late) {
   return penalty;
 }
 
-function calculateTimeDifferenceToNoon(currentTime) {
+function CalculateTimeDifferentToDeadline(currentTime) {
   const noonTime = new Date();
-  noonTime.setHours(12, 0, 0, 0); // Set noon time (12:00:00)
+  noonTime.setHours(hourInputDeadline.value, minuteInputDeadline.value, 0, 0); // Set noon time (12:00:00)
 
   if (currentTime < noonTime) {
     return 0;

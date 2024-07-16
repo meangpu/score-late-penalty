@@ -137,6 +137,7 @@ input[type="number"] {
   text-indent: 0.4rem;
   cursor: pointer;
   width: 100%;
+  max-width: 3.5rem;
 }
 
 input[type="number"]:focus {
@@ -146,6 +147,16 @@ input[type="number"]:focus {
 input[type="number"]:hover {
   background: #ebebeb0e;
   border: 2px dashed rgba(255, 255, 255, 0.747);
+}
+
+input[type="number"].deadline-input {
+  -moz-appearance: textfield;
+  appearance: textfield;
+  font-family: "Fira Code", monospace;
+  border: 2px dashed #ffffff5b;
+  width: 10%;
+  text-indent: 0.4rem;
+  cursor: pointer;
 }
 
 .max_width {
